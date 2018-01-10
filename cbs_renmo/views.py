@@ -8,3 +8,7 @@ def home(request):
 
 def testview():
     pass
+
+
+def jjFunction():
+    pass
