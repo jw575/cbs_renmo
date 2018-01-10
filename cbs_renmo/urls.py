@@ -23,8 +23,3 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
 ]
-
-# Testing
-
-# Testing Shohei
-# Shohei
