@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <br>
+    <span class="h2 col-sm-12 text-center">Sell your CNY here!<br><br></span>
+
+    <form action="" method="get" class='form-horizontal'>
+
+        <div class="form-group"><label class="control-label col-sm-4">Seller</label>
+            <div class="col-sm-6"><input class="form-control" name="seller"
+                                         value="{{ seller.firstname }} {{ seller.lastname }}"
+                                         readonly></div>
+        </div>
+
+
+        <div class="form-group"><label class="control-label col-sm-4">Listing Date</label>
+            <div class="col-sm-6"><input class="form-control" name="date" value="{{ date }}"
+                                         readonly></div>
+        </div>
+
+        <div class="form-group"><label class="control-label col-sm-4">Selling amount (CNY)</label>
+            <div class="col-sm-6"><input class="form-control" name="sell_amount" value="amount" type="number"
+                                         step="0.01"
+                                         placeholder="Enter selling amount"></div>
+        </div>
+
+        <div class="form-group"><label class="control-label col-sm-4">Requested FX rate</label>
+            <div class="col-sm-6"><input class="form-control" name="fx_rate" value="rate" type="number" step="0.000001"
+                                         placeholder="Enter preferred exchange rate">
+            </div>
+        </div>
+
+        <div class="form-group"><label class="control-label col-sm-4"></label>
+            <div class="col-sm-6">(Market rate today: 1 CNY equals to {{ fx_rate }} USD)</div>
+        </div>
+
+        <div class="col-sm-4"></div>
+        <div class="col-sm-6">
+            <input name="list" value="Submit" type="submit" class="btn btn-primary">
+            <a class="btn btn-primary" href="{% url "home" %}" role="button">Cancel</a>
+        </div>
+    </form>
+
+{% endblock %}

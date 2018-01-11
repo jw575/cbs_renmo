@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Your listing confirmation</h3>
+    Seller: {{ listing.seller_name.firstname }} {{ listing.seller_name.lastname }}<br>
+    Listing Date: {{ listing.listing_date }}<br>
+    Selling amount(CNY): {{ listing.CNY_amount }}<br>
+    Requested FX rate: {{ listing.fx_rate }}<br>
+    <p>
+        <a class="btn btn-primary" href="{% url "list" %}" role="button">Make another listing</a>
+        <a class="btn btn-primary" href="{% url "home" %}" role="button">Home</a>
+    </p>
+{% endblock %}

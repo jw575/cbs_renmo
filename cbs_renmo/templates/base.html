@@ -1,31 +1,63 @@
 {% load staticfiles %}
 <html>
 <head>
-    <title>CBS Renmo</title>
-    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Renmo: Renminbi Exchange Made Easy</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
     <link rel='stylesheet' href='{% static 'main.css' %}'>
 </head>
 
 <body>
-<div class='page-header'>
-    <h1><a href='/'>CBS RENMO</a></h1>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
 
-<div class='content container'>
-    <div class='row'>
-        <div class='col-md-8'>
-            {% block content %}
-            {% endblock %}
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url "home" %}">Renmo | Renminbi Exchange Made Easy</a>
         </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+
+        <!---- Login Form
+      <div id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+      </div>
+      ---->
     </div>
+</nav>
+
+<div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
 </div>
 
-<div id='footer'>
-    © 2018 Columbia Business School. All Rights Reserved.<br>
-    Project Team 3
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p class="footer-text"> © 2018 Columbia Business School #Team3. All Rights Reserved.</p>
+    </div>
+</nav>
 
 </body>
 </html>
