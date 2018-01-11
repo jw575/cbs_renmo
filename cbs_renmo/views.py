@@ -24,8 +24,7 @@ def login(request):
 
 
 def receiver(request):
-    from django.urls import reverse
-    from django.http import HttpResponseRedirect
+    from django.http import HttpResponse
 
     context = dict()
     try:
@@ -76,4 +75,9 @@ def receiver(request):
     print('before context')
     print(context)
     print('after context')
-    return render(request, "management.html", context)
+    return HttpResponse("")
+
+
+def my_Account(request):
+    context = dict()
+    return render(request, "account.html", context)
