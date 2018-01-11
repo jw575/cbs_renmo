@@ -55,20 +55,18 @@ def list(request):
     context['date'] = app_logic.get_date()
     context['fx_rate'] = app_logic.get_fx_rate()
     try:
-        request.GET['home']
-        return home(request)
+        request.GET['list']
+        sell_amount = request.GET['sell_amount']
+        fx_rate = request.GET['fx_rate']
+        app_logic.post_listing(seller.id, sell_amount, fx_rate)
+        return listingconfirm(request)
     except:
-        try:
-            request.GET['list']
-            sell_amount = request.GET['sell_amount']
-            fx_rate = request.GET['fx_rate']
-            app_logic.post_listing(seller.id, sell_amount, fx_rate)
-            return listingconfirm(request)
-        except:
-            pass
+        pass
     return render(request, "list.html", context)
 
 
 def listingconfirm(request):
     context = dict()
+    new_listing = Listing.objects.order_by('-id').first()
+    context['listing'] = new_listing
     return render(request, "listingconfirm.html", context)

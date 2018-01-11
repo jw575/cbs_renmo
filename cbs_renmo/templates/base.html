@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Renmo | Renminbi Exchange Made Easy</a>
+            <a class="navbar-brand" href="{% url "home" %}">Renmo | Renminbi Exchange Made Easy</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -45,8 +45,19 @@
     </div>
 </nav>
 
-{% block content %}
-{% endblock %}
+<div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p class="footer-text"> © 2018 Columbia Business School #Team3. All Rights Reserved.</p>
+    </div>
+</nav>
 
 </body>
 </html>
