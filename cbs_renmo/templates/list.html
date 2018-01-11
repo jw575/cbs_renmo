@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Sell some CNY here!</h3>
+    Seller: {{ seller.firstname }} {{ seller.lastname }}<br>
+    Listing Date: {{ date }}
+    <form action="" method="get">
+        Selling amount:
+        <input name="sell_amount" value="amount" type="number" step="0.01"> CNY <br>
+        Requested FX rate:
+        <input name="fx_rate" value="rate" type="number" step="0.000001"><br>
+        (Market rate today: 1 CNY equals to {{ fx_rate }} USD)<br>
+        <input name="list" value="Submit" type="submit">
+        <input name="home" value="Cancel" type="submit">
+    </form>
+
+{% endblock %}
