@@ -22,4 +22,7 @@ urlpatterns = [
     # url (Actual URL, Function called when URL called, Name given to refer to url internally)
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    url(r'^bankInfo', views.get_bank, name='bankInfo'),
+    url(r'^loginFunction', views.login, name='loginFunction'),
+    url(r'^management', views.receiver, name='receiver'),
 ]

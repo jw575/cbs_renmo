@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <button id='linkButton'>Input Bank Information</button>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        var csrftoken = getCookie('csrftoken');
+        var linkHandler = Plaid.create({
+            {#'development' tests with live users, 'production' when it's time to go live#}
+            env: 'sandbox',
+            clientName: 'CBS Renmo Test',
+            key: 'cc5eca9a7b42c6fd2dee4ebad4e959',
+            product: ['auth'],
+            selectAccount: true,
+            onSuccess: function (public_token, metadata) {
+                // Send the public_token and account ID to your app server.
+                console.log('bank info: ' + public_token);
+                console.log('account_ID: ' + metadata.account_id);
+                $.ajaxSetup({
+                    beforeSend: function (xhr, settings) {
+                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
+                $.ajax({
+                    url: "management.html",
+                    type: "POST",
+                    data: {'token': public_token, 'id': metadata.account_id},
+                    success: function () {
+                        console.log('success');
+                        window.location.href = 'management.html';
+                    },
+                    error: function (xhr) {
+                        alert('Error in processing request');
+                    }
+                });
+                event.preventDefault();
+            },
+            onExit: function (err, metadata) {
+                // The user exited the Link flow.
+                if (err != null) {
+                    // The user encountered a Plaid API error prior to exiting.
+                }
+            },
+        });
+
+        // Trigger the Link UI
+        document.getElementById('linkButton').onclick = function () {
+            linkHandler.open();
+        };
+    </script>
+
+{% endblock %}
