@@ -1,4 +1,5 @@
 def process_bank_info(public_token, account_id):
+    # Converts Plaid public token and account ID into Plaid access token and Stripe token for processing.
     from plaid import Client
 
     # Change `sandbox` to `development` to test with live users and change
@@ -16,6 +17,7 @@ def process_bank_info(public_token, account_id):
 
 
 def account_data(plaid_access_token):
+    # Returns all account data for plaid_access_token account
     from plaid import Client
 
     client = Client(client_id='5a54dbbdefe64e49ca4ae233', secret='e46141f14d9a73d68f2dc58a7a9c3b',
@@ -25,3 +27,9 @@ def account_data(plaid_access_token):
     # account information and account numbers for depository accounts.
     auth_response = client.Auth.get(plaid_access_token)
     return auth_response
+
+
+def update_account_db(user_id, stripe_token, plaid_access_token):
+    # Updates db with new user account
+
+    return
