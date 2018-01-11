@@ -28,4 +28,6 @@ urlpatterns = [
     # Management comes after bank info has been provided. It receives the bank info.
     url(r'^management', views.receiver, name='receiver'),
     url(r'^myaccount', views.my_Account, name='accountHome'),
+    url(r'^list$', views.list, name='list'),
+    url(r'^listingconfirm', views.listingconfirm, name='listingconfirm'),
 ]

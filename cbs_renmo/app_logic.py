@@ -1,3 +1,5 @@
+from cbs_renmo.models import User, Listing
+
 def process_bank_info(public_token, account_id):
     # Converts Plaid public token and account ID into Plaid access token and Stripe token for processing.
     from plaid import Client
@@ -14,7 +16,6 @@ def process_bank_info(public_token, account_id):
     bank_account_token = stripe_response['stripe_bank_account_token']
 
     return [access_token, bank_account_token]
-
 
 def account_data(plaid_access_token):
     # Returns all account data for plaid_access_token account
@@ -42,3 +43,27 @@ def update_account_db(username, stripe_token, plaid_access_token):
 
     return None
 
+
+def get_date():
+    import datetime
+    current_date = datetime.date.today().strftime('%Y-%m-%d')
+    return (current_date)
+
+
+def get_fx_rate():
+    try:
+        url = "http://www.xe.com/currencyconverter/convert/?Amount=1&From=CNY&ToUSD"
+        import requests
+        from bs4 import BeautifulSoup
+        page_data = BeautifulSoup(requests.get(url).content, 'lxml')
+        return float(page_data.find('span', class_='uccResultAmount').get_text())
+    except:
+        return None
+
+
+def post_listing(seller_id, amount, rate):
+    listing_date = get_date()
+    user = User.objects.get(id=seller_id)
+    new_listing = Listing(listing_date=listing_date, seller_name=user, CNY_amount=amount, fx_rate=rate)
+    new_listing.save()
+    return None

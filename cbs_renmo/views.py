@@ -1,7 +1,8 @@
 from django.shortcuts import render
 import cbs_renmo
 import cbs_renmo.app_logic
-
+from cbs_renmo import app_logic
+from cbs_renmo.models import User, Listing
 
 def home(request):
     context = dict()
@@ -25,8 +26,6 @@ def login(request):
 
 def receiver(request):
     from django.http import HttpResponse
-
-
     # TODO take ids and store them in a db
     context = dict()
     try:
@@ -83,3 +82,27 @@ def receiver(request):
 def my_Account(request):
     context = dict()
     return render(request, "myaccount.html", context)
+
+
+def list(request):
+    context = dict()
+    seller = User.objects.get(id=1)
+    context['seller'] = seller
+    context['date'] = app_logic.get_date()
+    context['fx_rate'] = app_logic.get_fx_rate()
+    try:
+        request.GET['list']
+        sell_amount = request.GET['sell_amount']
+        fx_rate = request.GET['fx_rate']
+        app_logic.post_listing(seller.id, sell_amount, fx_rate)
+        return listingconfirm(request)
+    except:
+        pass
+    return render(request, "list.html", context)
+
+
+def listingconfirm(request):
+    context = dict()
+    new_listing = Listing.objects.order_by('-id').first()
+    context['listing'] = new_listing
+    return render(request, "listingconfirm.html", context)
