@@ -60,6 +60,9 @@ def list(request):
     except:
         try:
             request.GET['list']
+            sell_amount = request.GET['sell_amount']
+            fx_rate = request.GET['fx_rate']
+            app_logic.post_listing(seller.id, sell_amount, fx_rate)
             return listingconfirm(request)
         except:
             pass

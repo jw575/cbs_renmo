@@ -1,3 +1,5 @@
+from cbs_renmo.models import User, Listing
+
 def process_bank_info(public_token, account_id):
     from plaid import Client
 
@@ -29,7 +31,7 @@ def account_data(plaid_access_token):
 
 def get_date():
     import datetime
-    current_date = datetime.date.today()
+    current_date = datetime.date.today().strftime('%Y-%m-%d')
     return (current_date)
 
 
@@ -42,3 +44,11 @@ def get_fx_rate():
         return float(page_data.find('span', class_='uccResultAmount').get_text())
     except:
         return None
+
+
+def post_listing(seller_id, amount, rate):
+    listing_date = get_date()
+    user = User.objects.get(id=seller_id)
+    new_listing = Listing(listing_date=listing_date, seller_name=user, CNY_amount=amount, fx_rate=rate)
+    new_listing.save()
+    return None
