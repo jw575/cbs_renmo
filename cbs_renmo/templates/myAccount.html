@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1><a href='/'>My</a></h1>
+    <!-- Show the balance of only the Account that the user selected -->
+    <h2> Testing </h2>
+    <ul>
+    <!-- TODO - figure out why dataset is not printing items -->
+        <li>Balance: {{ account_data.available_balance }}</li>
+    </ul>
+    <ul>
+        {% for x in 'xxxxx' %}
+            <li>{{ forloop.counter0 }}</li>
+        {% endfor %}
+    </ul>
+    <h4>End testing</h4>
+{% endblock %}

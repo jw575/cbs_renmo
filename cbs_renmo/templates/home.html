@@ -30,7 +30,6 @@
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="{% url "loginFunction" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
-
         <!---- Login Form
       <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right">
@@ -71,6 +70,17 @@
         <p class="footer-text "> © 2018 Columbia Business School #Team3. All Rights Reserved.</p>
     </div>
 </nav>
+
+{% block content %}
+    <span class='large-font'>
+        When the website is ready, you'll be able to choose one of the following:
+    </span>
+    <p>
+        {% for option in options %}
+            <a href="{% url option.0 %}">{{ option.1 }}</a><br>
+        {% endfor %}
+    </p>
+{% endblock %}
 
 </body>
 </html>
