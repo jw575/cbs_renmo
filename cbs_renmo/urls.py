@@ -22,9 +22,12 @@ urlpatterns = [
     # url (Actual URL, Function called when URL called, Name given to refer to url internally)
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    # bankInfo is the page that prompts user for bank information
     url(r'^bankInfo', views.get_bank, name='bankInfo'),
     url(r'^loginFunction', views.login, name='loginFunction'),
+    # Management comes after bank info has been provided. It receives the bank info.
     url(r'^management', views.receiver, name='receiver'),
+    url(r'^myaccount', views.my_Account, name='accountHome'),
     url(r'^list$', views.list, name='list'),
     url(r'^listingconfirm', views.listingconfirm, name='listingconfirm'),
 ]
