@@ -28,10 +28,17 @@ def account_data(plaid_access_token):
     auth_response = client.Auth.get(plaid_access_token)
     return auth_response
 
-def update_account_db(user_id, stripe_token, plaid_access_token):
-    # Updates db with new user account
+def update_account_db(username, stripe_token, plaid_access_token):
+    # Updates db with user account. Assumes user account exists already.
+    from cbs_renmo.models import User, bankAccount
 
+    # TODO find matching User object using username and set it to user_object
+    user_object = ''
 
+    # TODO check if account already exists. If it does, do nothing and return message.
 
-    return
+    account_object = bankAccount(plaid_token=plaid_access_token, stripe_token=stripe_token, user=user_object)
+    account_object.save()
+
+    return None
 

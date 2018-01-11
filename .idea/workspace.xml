@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4443bbb9-5eb4-421a-865c-1b6107031078" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cbs_renmo.iml" afterPath="$PROJECT_DIR$/.idea/cbs_renmo.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/cbs_renmo/migrations/0002_bankaccount_listing.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cbs_renmo/app_logic.py" afterPath="$PROJECT_DIR$/cbs_renmo/app_logic.py" />
-      <change beforePath="$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html" afterPath="$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html" />
-      <change beforePath="$PROJECT_DIR$/cbs_renmo/templates/home.html" afterPath="$PROJECT_DIR$/cbs_renmo/templates/home.html" />
-      <change beforePath="$PROJECT_DIR$/cbs_renmo/urls.py" afterPath="$PROJECT_DIR$/cbs_renmo/urls.py" />
+      <change beforePath="$PROJECT_DIR$/cbs_renmo/models.py" afterPath="$PROJECT_DIR$/cbs_renmo/models.py" />
       <change beforePath="$PROJECT_DIR$/cbs_renmo/views.py" afterPath="$PROJECT_DIR$/cbs_renmo/views.py" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,18 +23,99 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="bankInfo.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.59543437">
+      <split-first>
+        <splitter split-orientation="horizontal" split-proportion="0.48350254">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+              <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/models.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="260">
+                      <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="12" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="bankInfo.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-360">
+                      <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="myAccount.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/myAccount.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="0">
+                      <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/views.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="369">
+                      <caret line="38" column="106" lean-forward="true" selection-start-line="38" selection-start-column="106" selection-end-line="38" selection-end-column="106" />
+                      <folding>
+                        <element signature="e#0#35#0" expanded="true" />
+                        <element signature="e#1211#1258#0" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="app_logic.py" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/app_logic.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="331">
+                      <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                      <folding>
+                        <marker date="1515685913889" expanded="true" signature="1460:1921" ph="..." />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/cbs_renmo/models.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="400">
+                      <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="app_logic.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/cbs_renmo/app_logic.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="752">
+                  <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,7 +149,6 @@
         <option value="$PROJECT_DIR$/cbs_renmo/settings.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/cbs_renmo/forms.py" />
-        <option value="$PROJECT_DIR$/cbs_renmo/models.py" />
         <option value="$PROJECT_DIR$/quickstart/python/server.py" />
         <option value="$PROJECT_DIR$/BankThief.py" />
         <option value="$PROJECT_DIR$/getBank.py" />
@@ -83,14 +160,15 @@
         <option value="$PROJECT_DIR$/cbs_renmo/templates/management.html" />
         <option value="$PROJECT_DIR$/cbs_renmo/test" />
         <option value="$PROJECT_DIR$/cbs_renmo/test.py" />
-        <option value="$PROJECT_DIR$/cbs_renmo/app_logic.py" />
         <option value="$PROJECT_DIR$/cbs_renmo/static/main.css" />
         <option value="$PROJECT_DIR$/cbs_renmo/urls.py" />
         <option value="$PROJECT_DIR$/cbs_renmo/templates/home.html" />
         <option value="$PROJECT_DIR$/cbs_renmo/templates/base.html" />
         <option value="$PROJECT_DIR$/cbs_renmo/templates/list.html" />
-        <option value="$PROJECT_DIR$/cbs_renmo/views.py" />
         <option value="$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html" />
+        <option value="$PROJECT_DIR$/cbs_renmo/models.py" />
+        <option value="$PROJECT_DIR$/cbs_renmo/views.py" />
+        <option value="$PROJECT_DIR$/cbs_renmo/app_logic.py" />
       </list>
     </option>
   </component>
@@ -300,7 +378,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28956625" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24150059" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24150059" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40328252" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -443,6 +521,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -485,6 +564,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,6 +601,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,6 +630,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -588,6 +670,7 @@
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -685,14 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cbs_renmo/app_logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cbs_renmo/static/coverpage.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -710,14 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cbs_renmo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -740,14 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/myAccount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -756,20 +815,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/myAccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cbs_renmo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="369">
+          <caret line="38" column="106" lean-forward="true" selection-start-line="38" selection-start-column="106" selection-end-line="38" selection-end-column="106" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1211#1258#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cbs_renmo/templates/bankInfo.html">
+    <entry file="file://$PROJECT_DIR$/cbs_renmo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        <state relative-caret-position="260">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cbs_renmo/app_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding />
         </state>
       </provider>

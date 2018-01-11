@@ -17,4 +17,7 @@ class Listing(models.Model):
     CNY_amount = models.IntegerField(max_length=30)
     fx_rate = models.FloatField(max_length=30)
 
-# Testing new version test test
+class bankAccount(models.Model):
+    plaid_token = models.CharField(max_length=200)
+    stripe_token = models.CharField(max_length=200)
+    user = models.ForeignKey(User)
