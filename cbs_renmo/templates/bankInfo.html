@@ -23,6 +23,7 @@
             return cookieValue;
         }
 
+        // Django REQUIRES returning a csrf key with an ajax post request. csrfSafeMethod() generates the token.
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
             return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -38,8 +39,12 @@
             selectAccount: true,
             onSuccess: function (public_token, metadata) {
                 // Send the public_token and account ID to your app server.
+                // public_token is the Plaid reference to the overall account. It can link to balances, transactions, account name, wire numbers, etc.
                 console.log('bank info: ' + public_token);
+                // account_id is ONLY the account that the user chose which will be used to charge/withdraw with Stripe.
                 console.log('account_ID: ' + metadata.account_id);
+
+                //Sends the csrf token as requried by django.
                 $.ajaxSetup({
                     beforeSend: function (xhr, settings) {
                         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
@@ -47,13 +52,15 @@
                         }
                     }
                 });
+
+                // Sends public_token and account_id to management.html
                 $.ajax({
                     url: "management.html",
                     type: "POST",
-                    data: {'token': public_token, 'id': metadata.account_id},
+                    data: {'user': 'admin', 'token': public_token, 'id': metadata.account_id},
                     success: function () {
                         console.log('success');
-                        window.location.href = 'management.html';
+                        //window.location.href = 'management.html';
                     },
                     error: function (xhr) {
                         alert('Error in processing request');
