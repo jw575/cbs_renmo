@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import cbs_renmo
 import cbs_renmo.app_logic
+from cbs_renmo import app_logic
+from cbs_renmo.models import User, Listing
 
 
 def home(request):
@@ -44,3 +46,26 @@ def receiver(request):
     except:
         print("Exception Occured")
     return render(request, "management.html", context)
+
+
+def list(request):
+    context = dict()
+    seller = User.objects.get(id=1)
+    context['seller'] = seller
+    context['date'] = app_logic.get_date()
+    context['fx_rate'] = app_logic.get_fx_rate()
+    try:
+        request.GET['home']
+        return home(request)
+    except:
+        try:
+            request.GET['list']
+            return listingconfirm(request)
+        except:
+            pass
+    return render(request, "list.html", context)
+
+
+def listingconfirm(request):
+    context = dict()
+    return render(request, "listingconfirm.html", context)

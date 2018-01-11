@@ -12,10 +12,9 @@ class User(models.Model):
     password = models.CharField(max_length=50)
 
 class Listing(models.Model):
-    listing_id = models.IntegerField(max_length=30)
-    listing_time = models.DateTimeField()
+    listing_date = models.DateField()
     seller_name = models.ForeignKey(User)
-    RMB_amount = models.IntegerField(max_length=30)
+    CNY_amount = models.IntegerField(max_length=30)
     fx_rate = models.FloatField(max_length=30)
 
 # Testing new version test test

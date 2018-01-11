@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^bankInfo', views.get_bank, name='bankInfo'),
     url(r'^loginFunction', views.login, name='loginFunction'),
     url(r'^management', views.receiver, name='receiver'),
+    url(r'^list$', views.list, name='list'),
+    url(r'^listingconfirm', views.listingconfirm, name='listingconfirm'),
 ]

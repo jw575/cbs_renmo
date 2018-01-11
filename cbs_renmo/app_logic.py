@@ -25,3 +25,20 @@ def account_data(plaid_access_token):
     # account information and account numbers for depository accounts.
     auth_response = client.Auth.get(plaid_access_token)
     return auth_response
+
+
+def get_date():
+    import datetime
+    current_date = datetime.date.today()
+    return (current_date)
+
+
+def get_fx_rate():
+    try:
+        url = "http://www.xe.com/currencyconverter/convert/?Amount=1&From=CNY&ToUSD"
+        import requests
+        from bs4 import BeautifulSoup
+        page_data = BeautifulSoup(requests.get(url).content, 'lxml')
+        return float(page_data.find('span', class_='uccResultAmount').get_text())
+    except:
+        return None
