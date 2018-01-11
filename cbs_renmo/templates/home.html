@@ -22,13 +22,13 @@
     <div class="container">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Renmo | Renminbi Exchange Made Easy</a>
+            <a class="navbar-brand" href="{% url "home" %}">Renmo | Renminbi Exchange Made Easy</a>
         </div>
 
         <!--- Signup/ Login--->
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="{% url "loginFunction" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
 
         <!---- Login Form
@@ -60,8 +60,8 @@
             Renmo is a perfect solution for you!
         </p>
         <br>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a><br>
-            <a class="btn btn-lg">Already had an account?</a></p>
+        <p><a class="btn btn-primary btn-lg" href="{% url "list" %}" role="button">Get Started</a><br>
+            <a class="btn btn-lg" href="{% url "loginFunction" %}">Already had an account?</a></p>
 
     </div>
 </div>
