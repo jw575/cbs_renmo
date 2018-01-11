@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <span class='large-font'>
-        When the website is ready, you'll be able to choose one of the following:
-    </span>
-    <p>
-        {% for option in options %}
-            <a href="{% url option.0 %}">{{ option.1 }}</a><br>
-        {% endfor %}
-    </p>
+
+    <div class="jumbotroncover">
+        <div class="container text-center">
+            <p class="h1">Looking to buy or sell Renminbi?</p>
+            <hr>
+            <p class="lead">
+                Renmo is an online platform for P2P exchange of Chinese Renminbi (CNY)
+                and US Dollars (USD), <br>uniquely developed by and catered to Columbia Business School
+                students.<br><br>
+                If you are travelling to or from China and looking for hassle-free USD to CNY exchange, <br>
+                Renmo is a perfect solution for you!
+            </p>
+            <br>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a><br>
+                <a class="btn btn-lg">Already had an account?</a></p>
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p class="footer-text "> © 2018 Columbia Business School. Team 3. All Rights Reserved.</p>
+        </div>
+    </nav>
+
 {% endblock %}
